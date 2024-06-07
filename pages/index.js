@@ -5,7 +5,9 @@ export default function Home() {
         <nav>
           <div>
             <h1 className="font-bold uppercase p-4 border-b border-gray-200">
-              <a href="/">Food Ninja</a>
+              <a href="/" class="">
+                Food Ninja
+              </a>
             </h1>
           </div>
           <ul>
@@ -29,11 +31,11 @@ export default function Home() {
       </div>
 
       <main class="px-16 py-6">
-        <div>
+        <div class="flex justify-center md:justify-end">
           <a href="/" class="text-primary">
             Log in
           </a>
-          <a href="/" class="text-primary">
+          <a href="/" class="text-primary ml-2">
             Sign up
           </a>
         </div>
@@ -58,13 +60,13 @@ export default function Home() {
             </div>
           </div>
 
-          <h4 class="font-bold mt-12 pb-2 border-b border-gray-200">
+          <h4 class="font-bold mt-12 pb-2 border-b border-gray-200 font-body">
             Most Popular
           </h4>
 
           <div class="mt-8"></div>
 
-          <div>
+          <div class="flex justify-center">
             <div class="bg-secondary-100 text-secondary-200">Load more</div>
           </div>
         </div>
