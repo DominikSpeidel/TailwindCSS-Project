@@ -10,3 +10,11 @@
     @apply font-body;
   }
 }
+
+.card {
+  @apply relative bg-white rounded-lg overflow-hidden shadow-md;
+}
+
+.badge {
+  @apply bg-secondary-100 text-secondary-200 text-sm uppercase rounded-full p-2 absolute top-0 ml-2 mt-2;
+}

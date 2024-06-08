@@ -1,3 +1,5 @@
+import Card from "./components/card";
+
 export default function Home() {
   return (
     <div>
@@ -50,23 +52,10 @@ export default function Home() {
             Latest Recipes
           </h4>
 
-          <div class="mt-8">
-            <div class=" relative bg-white rounded-lg overflow-hidden shadow-md">
-              <img
-                class="w-full h-64 object-cover"
-                src="./hills.png"
-                alt="Hills"
-              />
-              <div class="flex flex-col text-center pt-2">
-                <p>5 Bean Chili Stew</p>
-                <p>Recipe by Mario</p>
-              </div>
-              <div class="bg-secondary-100 text-secondary-200 text-sm uppercase rounded-full p-2 absolute top-0 ml-2 mt-2">
-                <span>25 mins</span>
-              </div>
-            </div>
-          </div>
-
+          <Card image={"./cappuccino.jpg"} />
+          <Card image={"./quiche.jpg"} />
+          <Card image={"./Fish.jpg"} />
+          <Card image={"./shashuka.jpg"} />
           <h4 class="font-bold mt-12 pb-2 border-b border-gray-200 font-body">
             Most Popular
           </h4>
