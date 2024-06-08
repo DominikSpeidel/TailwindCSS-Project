@@ -1,3 +1,5 @@
+import Card from "./components/card";
+
 export default function Home() {
   return (
     <div>
@@ -30,7 +32,7 @@ export default function Home() {
         </nav>
       </div>
 
-      <main class="px-16 py-6">
+      <main class="px-16 py-6 bg-gray-50">
         <div class="flex justify-center md:justify-end">
           <a href="/" class="text-primary">
             Log in
@@ -50,16 +52,10 @@ export default function Home() {
             Latest Recipes
           </h4>
 
-          <div class="mt-8">
-            <div>
-              <img className="w-87 h-60" src="./hills.png" alt="Hills" />
-              <div>
-                <span>5 Bean Chili Stew</span>
-                <span>Recipe by Mario</span>
-              </div>
-            </div>
-          </div>
-
+          <Card image={"./cappuccino.jpg"} />
+          <Card image={"./quiche.jpg"} />
+          <Card image={"./Fish.jpg"} />
+          <Card image={"./shashuka.jpg"} />
           <h4 class="font-bold mt-12 pb-2 border-b border-gray-200 font-body">
             Most Popular
           </h4>
