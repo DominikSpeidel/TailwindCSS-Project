@@ -2,12 +2,14 @@ import Nav from "./components/nav";
 import Card from "./components/card";
 import LogIn from "./components/LogIn";
 
+import Contact_Icon from "./components/Icons/Contact_Icon";
+
 export default function Home() {
   return (
     <div class="grid md:grid-cols-4">
-      <div class="md:col-span-1">
+      <section class="md:col-span-1">
         <Nav />
-      </div>
+      </section>
 
       <main class="px-16 py-6 bg-gray-50 md:col-span-3">
         <LogIn />
@@ -34,10 +36,11 @@ export default function Home() {
           <div class="mt-8"></div>
 
           <div class="flex justify-center">
-            <div class="bg-secondary-100 text-secondary-200">Load more</div>
+            <div class="btn bg-secondary-100 text-secondary-200">Load more</div>
           </div>
         </div>
       </main>
+      <Contact_Icon />
     </div>
   );
 }
