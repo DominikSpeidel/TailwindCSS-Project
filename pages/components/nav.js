@@ -7,7 +7,7 @@ function Nav() {
     <nav>
       <div>
         <h1 className="font-bold uppercase p-4 border-b border-gray-200">
-          <a href="/" class="">
+          <a href="/" class="hover:text-gray-900">
             Rufus Food Planner
           </a>
         </h1>

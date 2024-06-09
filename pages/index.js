@@ -7,7 +7,7 @@ import Contact_Icon from "./components/Icons/Contact_Icon";
 export default function Home() {
   return (
     <div class="grid md:grid-cols-4">
-      <section class="md:col-span-1">
+      <section class="md:col-span-1 md:flex md:justify-end">
         <Nav />
       </section>
 
@@ -36,7 +36,9 @@ export default function Home() {
           <div class="mt-8"></div>
 
           <div class="flex justify-center">
-            <div class="btn bg-secondary-100 text-secondary-200">Load more</div>
+            <div class="btn bg-secondary-100 text-secondary-200 hover:shadow-inner">
+              Load more
+            </div>
           </div>
         </div>
       </main>
