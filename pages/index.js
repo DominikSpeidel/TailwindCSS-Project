@@ -15,8 +15,8 @@ export default function Home() {
         <LogIn />
 
         <header>
-          <h2 className="text-gray-700 text-6xl font-semibold">Recipes</h2>
-          <h3 className="text-2xl font-semibold">For Ninjas</h3>
+          <h2 className="text-gray-700 text-6xl font-semibold">Rezepte</h2>
+          <h3 className="text-2xl font-semibold">Für Tapfere Schneiderleins</h3>
         </header>
 
         <div>
