@@ -1,5 +1,6 @@
 import Nav from "./components/nav";
 import Card from "./components/card";
+import LogIn from "./components/LogIn";
 
 export default function Home() {
   return (
@@ -9,14 +10,7 @@ export default function Home() {
       </div>
 
       <main class="px-16 py-6 bg-gray-50 md:col-span-3">
-        <div class="flex justify-center md:justify-end">
-          <a href="/" class="text-primary">
-            Log in
-          </a>
-          <a href="/" class="text-primary ml-2">
-            Sign up
-          </a>
-        </div>
+        <LogIn />
 
         <header>
           <h2 className="text-gray-700 text-6xl font-semibold">Recipes</h2>
