@@ -4,30 +4,30 @@ import Contact_Icon from "./Icons/Contact_Icon";
 
 function Nav() {
   return (
-    <nav>
+    <nav class="text-right">
       <div>
-        <h1 className="font-bold uppercase p-4 border-b border-gray-200">
+        <h1 class="font-bold uppercase p-4 border-b border-gray-100">
           <a href="/" class="hover:text-gray-900">
             Rufus Food Planner
           </a>
         </h1>
       </div>
-      <ul>
-        <li className="text-gray-700 font-bold">
-          <a href="/">
-            <span>Home</span>
+      <ul class="mt-6">
+        <li class="py-1 border-r-2 border-white hover:border-primary hover:text-gray-900">
+          <a href="/" class="px-4 flex justify-end">
+            <span class="mr-2">Home</span>
             <Home_Icon />
           </a>
         </li>
-        <li>
-          <a href="/">
-            <span>About</span>
+        <li class="py-1 border-r-2 border-white hover:border-primary hover:text-gray-900">
+          <a href="/" class="px-4 flex justify-end">
+            <span class="mr-2">About</span>
             <About_Icon />
           </a>
         </li>
-        <li>
-          <a href="/">
-            <span>Contact</span>
+        <li class="py-1 border-r-2 border-white hover:border-primary hover:text-gray-900">
+          <a href="/" class="px-4 flex justify-end">
+            <span class="mr-2">Contact</span>
             <Contact_Icon />
           </a>
         </li>
