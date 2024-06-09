@@ -1,3 +1,5 @@
+import Clock_Icon from "./Icons/Clock_Icon";
+
 function Card({ image }) {
   return (
     <div class="card">
@@ -6,7 +8,8 @@ function Card({ image }) {
         <p>5 Bean Chili Stew</p>
         <p>Recipe by Mario</p>
       </div>
-      <div class="badge">
+      <div class="badge gap-1">
+        <Clock_Icon />
         <span>25 mins</span>
       </div>
     </div>

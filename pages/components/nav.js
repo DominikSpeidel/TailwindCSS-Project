@@ -4,7 +4,7 @@ function Nav() {
       <div>
         <h1 className="font-bold uppercase p-4 border-b border-gray-200">
           <a href="/" class="">
-            Food Ninja
+            Rufus Food Planner
           </a>
         </h1>
       </div>
