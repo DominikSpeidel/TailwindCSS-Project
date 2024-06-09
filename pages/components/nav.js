@@ -1,3 +1,7 @@
+import Home_Icon from "./Icons/Home_Icon";
+import About_Icon from "./Icons/About_Icon";
+import Contact_Icon from "./Icons/Contact_Icon";
+
 function Nav() {
   return (
     <nav>
@@ -12,16 +16,19 @@ function Nav() {
         <li className="text-gray-700 font-bold">
           <a href="/">
             <span>Home</span>
+            <Home_Icon />
           </a>
         </li>
         <li>
           <a href="/">
             <span>About</span>
+            <About_Icon />
           </a>
         </li>
         <li>
           <a href="/">
             <span>Contact</span>
+            <Contact_Icon />
           </a>
         </li>
       </ul>
