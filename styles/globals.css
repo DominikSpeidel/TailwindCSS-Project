@@ -8,7 +8,7 @@
   html {
     @apply text-gray-500;
     @apply font-body;
-    @apply mr-40;
+    @apply m-auto;
   }
 }
 
