@@ -2,11 +2,18 @@ import Nav from "./components/nav";
 import Card from "./components/card";
 import LogIn from "./components/LogIn";
 
-import Contact_Icon from "./components/Icons/Contact_Icon";
 import { useState } from "react";
 
 export default function Home() {
   const [showAllCards, setShowAllCards] = useState(false);
+
+  const handleButtonClick = () => {
+    if (showAllCards) {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+    setShowAllCards(!showAllCards);
+  };
+
   return (
     <div className="grid md:grid-cols-4 md:mr-44">
       <section className="md:col-span-1 md:flex md:justify-end">
@@ -31,11 +38,12 @@ export default function Home() {
             <Card image={"./cappuccino.jpg"} />
             <Card image={"./quiche.jpg"} />
             <Card image={"./Fish.jpg"} />
+
+            <Card image={"./cappuccino.jpg"} />
+            <Card image={"./quiche.jpg"} />
+            <Card image={"./Fish.jpg"} />
             {showAllCards && (
               <>
-                <Card image={"./cappuccino.jpg"} />
-                <Card image={"./quiche.jpg"} />
-                <Card image={"./Fish.jpg"} />
                 <Card image={"./cappuccino.jpg"} />
                 <Card image={"./quiche.jpg"} />
                 <Card image={"./Fish.jpg"} />
@@ -47,25 +55,30 @@ export default function Home() {
 
           <div className="flex justify-center">
             <button
-              onClick={() => setShowAllCards(!showAllCards)}
+              onClick={handleButtonClick}
               className="btn bg-secondary-100 text-secondary-200 hover:shadow-inner transform hover:scale-125 duration-300"
             >
-              {showAllCards ? "Weniger anzeigen" : "Mehr anzeigen"}
+              {showAllCards ? "Nach oben" : "Mehr anzeigen"}
             </button>
           </div>
         </div>
-        <footer>
-          <ul
-            className="flex text-center justify-evenly mt-20 mb-4
-            "
-          >
-            <li>Impressum</li>
-            <li>Datenschutz</li>
-            <li>Karriere</li>
-            <li>© 2024</li>
-          </ul>
-        </footer>
       </main>
+      <footer className="md:col-span-3 md:col-start-2">
+        <ul className="flex text-center justify-evenly mt-10 mb-10">
+          <li className="hover:text-gray-900">
+            <a href="/">Impressum</a>
+          </li>
+          <li className="hover:text-gray-900">
+            <a href="/">Datenschutz</a>
+          </li>
+          <li className="hover:text-gray-900">
+            <a href="/">Karriere</a>
+          </li>
+          <li className="hover:text-gray-900">
+            <a href="/">© 2024</a>
+          </li>
+        </ul>
+      </footer>
     </div>
   );
 }
