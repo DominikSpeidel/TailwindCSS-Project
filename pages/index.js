@@ -23,7 +23,7 @@ export default function Home() {
           <h4 className="font-bold mt-12 pb-2 border-b border-gray-200">
             Latest Recipes
           </h4>
-          <div class="mt-8 grid lg:grid-cols-3 gap-10">
+          <div className="mt-8 grid lg:grid-cols-3 gap-10">
             <Card image={"./cappuccino.jpg"} />
             <Card image={"./quiche.jpg"} />
             <Card image={"./Fish.jpg"} />
@@ -35,7 +35,7 @@ export default function Home() {
           <div class="mt-8"></div>
 
           <div class="flex justify-center">
-            <div class="btn bg-secondary-100 text-secondary-200 hover:shadow-inner">
+            <div class="btn bg-secondary-100 text-secondary-200 hover:shadow-inner transform hover:scale-125 duration-300">
               Load more
             </div>
           </div>
