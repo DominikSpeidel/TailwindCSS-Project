@@ -27,7 +27,6 @@ export default function Home() {
             <Card image={"./cappuccino.jpg"} />
             <Card image={"./quiche.jpg"} />
             <Card image={"./Fish.jpg"} />
-            <Card image={"./shashuka.jpg"} />
           </div>
           <h4 class="font-bold mt-12 pb-2 border-b border-gray-200 font-body">
             Most Popular
