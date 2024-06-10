@@ -17,15 +17,17 @@ export default function Home() {
         <LogIn />
 
         <header>
-          <h2 className="text-gray-700 text-6xl font-semibold">Rezepte</h2>
+          <h2 className="text-gray-700 text-4xl md:text-6xl font-semibold">
+            Rezepte
+          </h2>
           <h3 className="text-2xl font-semibold">Für dich & deine Freunde</h3>
         </header>
 
         <div>
-          <h4 className="font-bold mt-12 pb-2 border-b border-gray-200">
+          <h4 className="font-bold mt-8 pb-2 border-b border-gray-200">
             kürzlich hinzugefügt
           </h4>
-          <div className="mt-8 grid lg:grid-cols-3 gap-10">
+          <div className="mt-6 grid lg:grid-cols-3 gap-10">
             <Card image={"./cappuccino.jpg"} />
             <Card image={"./quiche.jpg"} />
             <Card image={"./Fish.jpg"} />
@@ -52,6 +54,17 @@ export default function Home() {
             </button>
           </div>
         </div>
+        <footer>
+          <ul
+            className="flex text-center justify-evenly mt-20 mb-4
+            "
+          >
+            <li>Impressum</li>
+            <li>Datenschutz</li>
+            <li>Karriere</li>
+            <li>© 2024</li>
+          </ul>
+        </footer>
       </main>
     </div>
   );
