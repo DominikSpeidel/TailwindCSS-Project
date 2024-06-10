@@ -6,12 +6,12 @@ import Contact_Icon from "./components/Icons/Contact_Icon";
 
 export default function Home() {
   return (
-    <div class="grid md:grid-cols-4">
-      <section class="md:col-span-1 md:flex md:justify-end">
+    <div className="grid md:grid-cols-4">
+      <section className="md:col-span-1 md:flex md:justify-end">
         <Nav />
       </section>
 
-      <main class="px-16 py-6 bg-gray-50 md:col-span-3">
+      <main className="px-16 py-6 bg-gray-50 md:col-span-3">
         <LogIn />
 
         <header>
@@ -28,14 +28,14 @@ export default function Home() {
             <Card image={"./quiche.jpg"} />
             <Card image={"./Fish.jpg"} />
           </div>
-          <h4 class="font-bold mt-12 pb-2 border-b border-gray-200 font-body">
+          <h4 className="font-bold mt-12 pb-2 border-b border-gray-200 font-body">
             Most Popular
           </h4>
 
-          <div class="mt-8"></div>
+          <div className="mt-8"></div>
 
-          <div class="flex justify-center">
-            <div class="btn bg-secondary-100 text-secondary-200 hover:shadow-inner transform hover:scale-125 duration-300">
+          <div className="flex justify-center">
+            <div className="btn bg-secondary-100 text-secondary-200 hover:shadow-inner transform hover:scale-125 duration-300">
               Load more
             </div>
           </div>
