@@ -8,13 +8,13 @@ function Card({ image }) {
         src={image}
         alt="Hills"
       />
-      <div className="flex flex-col text-center pt-2">
+      <div className="flex md:flex-col justify-evenly text-center pt-2 h-20">
         <p>5 Bean Chili Stew</p>
         <p>Recipe by Mario</p>
       </div>
       <div className="badge gap-1">
         <Clock_Icon />
-        <span>25 mins</span>
+        <span>25 min</span>
       </div>
     </div>
   );

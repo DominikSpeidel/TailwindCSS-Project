@@ -14,7 +14,7 @@ function Nav() {
   return (
     <nav className="text-right">
       <div className="flex justify-between">
-        <h1 className="font-bold uppercase p-4">
+        <h1 className="font-bold uppercase p-4 md:mt-3">
           <a
             href="/"
             className="text-3xl md:text-4xl hover:text-gray-900 md:flex md:flex-col"
@@ -38,13 +38,13 @@ function Nav() {
         </li>
         <li className="py-1 border-r-2 border-white hover:border-primary hover:text-gray-900">
           <a href="/" className="px-4 flex justify-end">
-            <span className="mr-2">About</span>
+            <span className="mr-2">Über uns</span>
             <About_Icon />
           </a>
         </li>
         <li className="py-1 border-r-2 border-white hover:border-primary hover:text-gray-900">
           <a href="/" className="px-4 flex justify-end">
-            <span className="mr-2">Contact</span>
+            <span className="mr-2">Kontakt</span>
             <Contact_Icon />
           </a>
         </li>

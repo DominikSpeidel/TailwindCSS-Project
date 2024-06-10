@@ -5,6 +5,12 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    screens: {
+      sm: "640px",
+      md: "1024px",
+      lg: "1024px",
+      xl: "1280px",
+    },
     extend: {
       colors: {
         primary: "#FF6363",
