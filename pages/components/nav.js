@@ -3,6 +3,7 @@ import About_Icon from "./Icons/About_Icon";
 import Contact_Icon from "./Icons/Contact_Icon";
 import Menu_Icon from "./Icons/Menu_Icon";
 import Home_Icon from "./Icons/Home_Icon";
+import Link from "next/link";
 
 function Nav() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -31,22 +32,22 @@ function Nav() {
 
       <ul className={`mt-6 ${menuOpen ? "" : "hidden"} md:block`} id="menu">
         <li className="py-1 border-r-2 border-white hover:border-primary hover:text-gray-900">
-          <a href="/" className="px-4 flex justify-end">
+          <Link href="/" className="px-4 flex justify-end">
             <span className="mr-2">Home</span>
             <Home_Icon />
-          </a>
+          </Link>
         </li>
         <li className="py-1 border-r-2 border-white hover:border-primary hover:text-gray-900">
-          <a href="/" className="px-4 flex justify-end">
+          <Link href="/ueber-uns" className="px-4 flex justify-end">
             <span className="mr-2">Über uns</span>
             <About_Icon />
-          </a>
+          </Link>
         </li>
         <li className="py-1 border-r-2 border-white hover:border-primary hover:text-gray-900">
-          <a href="/" className="px-4 flex justify-end">
+          <Link href="/kontakt" className="px-4 flex justify-end">
             <span className="mr-2">Kontakt</span>
             <Contact_Icon />
-          </a>
+          </Link>
         </li>
       </ul>
     </nav>
