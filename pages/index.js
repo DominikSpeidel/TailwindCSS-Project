@@ -1,6 +1,7 @@
 import Nav from "./components/nav";
 import Card from "./components/card";
 import LogIn from "./components/LogIn";
+import Footer from "./components/footer";
 
 import { useState } from "react";
 
@@ -63,22 +64,7 @@ export default function Home() {
           </div>
         </div>
       </main>
-      <footer className="md:col-span-3 md:col-start-2">
-        <ul className="flex text-center justify-evenly mt-10 mb-10">
-          <li className="hover:text-gray-900">
-            <a href="/">Impressum</a>
-          </li>
-          <li className="hover:text-gray-900">
-            <a href="/">Datenschutz</a>
-          </li>
-          <li className="hover:text-gray-900">
-            <a href="/">Karriere</a>
-          </li>
-          <li className="hover:text-gray-900">
-            <a href="/">© 2024</a>
-          </li>
-        </ul>
-      </footer>
+      <Footer />
     </div>
   );
 }
