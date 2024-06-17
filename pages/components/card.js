@@ -12,7 +12,10 @@ function Card({ image }) {
         <p>5 Bean Chili Stew</p>
         <p>Recipe by Mario</p>
       </div>
-      <div className="badge gap-1">
+      <div
+        className="badge gap-1 flex items-center
+      "
+      >
         <Clock_Icon />
         <span>25 min</span>
       </div>
