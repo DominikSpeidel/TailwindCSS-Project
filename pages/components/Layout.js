@@ -1,6 +1,5 @@
 import Nav from "./nav";
 import Footer from "./footer";
-import LogIn from "./LogIn";
 
 function Layout({ children }) {
   return (
