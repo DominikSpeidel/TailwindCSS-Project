@@ -1,4 +1,6 @@
 import LogIn from "./components/LogIn";
+import Nav from "./components/nav";
+import Footer from "./components/footer";
 
 function Ueber_uns() {
   return (
