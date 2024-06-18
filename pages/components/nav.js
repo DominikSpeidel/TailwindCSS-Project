@@ -4,6 +4,7 @@ import Contact_Icon from "./Icons/Contact_Icon";
 import Menu_Icon from "./Icons/Menu_Icon";
 import Home_Icon from "./Icons/Home_Icon";
 import Link from "next/link";
+import { UserButton, SignedIn, SignedOut } from "@clerk/nextjs";
 
 function Nav() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -50,6 +51,7 @@ function Nav() {
           </Link>
         </li>
       </ul>
+      <SignedIn>hallo</SignedIn>
     </nav>
   );
 }
