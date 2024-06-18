@@ -11,9 +11,7 @@ import "@/styles/globals.css";
 export default function App({ Component, pageProps }) {
   return (
     <ClerkProvider {...pageProps}>
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
+      <Component {...pageProps} />
     </ClerkProvider>
   );
 }
