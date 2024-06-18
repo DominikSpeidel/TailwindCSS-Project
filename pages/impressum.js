@@ -1,5 +1,7 @@
+import LogIn from "./components/LogIn";
+
 function Impressum() {
-  return;
+  return <LogIn />;
 }
 
 export default Impressum;

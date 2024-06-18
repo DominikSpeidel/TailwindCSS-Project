@@ -1,5 +1,7 @@
+import LogIn from "./components/LogIn";
+
 function Kontakt() {
-  return;
+  return <LogIn />;
 }
 
 export default Kontakt;

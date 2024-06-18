@@ -1,5 +1,7 @@
+import LogIn from "./components/LogIn";
+
 function Datenschutz() {
-  return;
+  return <LogIn />;
 }
 
 export default Datenschutz;

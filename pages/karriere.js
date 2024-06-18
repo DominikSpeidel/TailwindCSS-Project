@@ -1,5 +1,7 @@
+import LogIn from "./components/LogIn";
+
 function Karriere() {
-  return;
+  return <LogIn />;
 }
 
 export default Karriere;
