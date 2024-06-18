@@ -1,28 +1,17 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { UserButton } from "@clerk/nextjs";
+import { UserButton, SignedIn, SignedOut } from "@clerk/nextjs";
 
 function LogIn() {
-  const [userId, setUserId] = useState(null);
-
-  useEffect(() => {
-    async function fetchUserId() {
-      const response = await fetch("/api/auth");
-      const data = await response.json();
-      setUserId(data.userId);
-    }
-
-    fetchUserId();
-  }, []);
-
   return (
     <section className="flex justify-start md:justify-end mb-7">
-      {userId ? (
-        <>
-          <UserButton></UserButton>
-        </>
-      ) : (
-        <>
+      <>
+        <SignedIn>
+          <UserButton showName></UserButton>
+        </SignedIn>
+      </>
+      <>
+        <SignedOut>
           <Link
             href="/sign-in"
             className="btn text-primary border-primary border-2 hover:bg-primary hover:text-white transform hover:scale-125 duration-300"
@@ -35,8 +24,8 @@ function LogIn() {
           >
             Registrieren
           </Link>
-        </>
-      )}
+        </SignedOut>
+      </>
     </section>
   );
 }
