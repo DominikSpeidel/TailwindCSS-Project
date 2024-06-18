@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { UserButton } from "@clerk/nextjs";
 
 function LogIn() {
   const [userId, setUserId] = useState(null);
@@ -18,11 +19,10 @@ function LogIn() {
     <section className="flex justify-start md:justify-end mb-7">
       {userId ? (
         <>
-          <p>Du bist angemeldet</p>
+          <UserButton></UserButton>
         </>
       ) : (
         <>
-          <p>Du bist angemeldet</p>
           <Link
             href="/sign-in"
             className="btn text-primary border-primary border-2 hover:bg-primary hover:text-white transform hover:scale-125 duration-300"
