@@ -16,6 +16,7 @@ export default function App({ Component, pageProps }) {
           variables: { colorPrimary: "blue" },
         },
       }}
+      {...pageProps}
     >
       <Component {...pageProps} />
     </ClerkProvider>

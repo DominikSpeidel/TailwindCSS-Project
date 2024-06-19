@@ -5,10 +5,22 @@ import { useEffect } from "react";
 function LogIn() {
   useEffect(() => {
     async function fetchUserId() {
-      const response = await fetch("/api/auth");
-      const data = await response.json();
+      try {
+        const response = await fetch("/api/auth");
+        const data = await response.json();
 
-      console.log(data);
+        if (
+          data.data.sessionClaims &&
+          data.data.sessionClaims.full_name &&
+          data.data.sessionClaims.full_name !== "null null"
+        ) {
+          console.log(data.data.sessionClaims.full_name);
+        } else {
+          console.log("Niemand angemeldet oder Fehler in den Daten:", data);
+        }
+      } catch (error) {
+        console.error("Fehler beim Abrufen der Daten:", error);
+      }
     }
 
     fetchUserId();
