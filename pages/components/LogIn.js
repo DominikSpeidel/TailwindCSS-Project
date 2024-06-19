@@ -1,7 +1,19 @@
 import Link from "next/link";
 import { UserButton, SignedIn, SignedOut } from "@clerk/nextjs";
+import { useEffect } from "react";
 
 function LogIn() {
+  useEffect(() => {
+    async function fetchUserId() {
+      const response = await fetch("/api/auth");
+      const data = await response.json();
+
+      console.log(data);
+    }
+
+    fetchUserId();
+  }, []);
+
   const userButtonAppearance = {
     elements: {
       userButtonAvatarBox: "w-14 h-14",
