@@ -14,6 +14,7 @@ function LogIn() {
           data.data.sessionClaims.full_name &&
           data.data.sessionClaims.full_name !== "null null"
         ) {
+          console.log(data);
           console.log(data.data.sessionClaims.full_name);
         } else {
           console.log("Niemand angemeldet oder Fehler in den Daten:", data);
