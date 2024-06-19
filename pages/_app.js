@@ -12,6 +12,9 @@ export default function App({ Component, pageProps }) {
         signIn: {
           variables: { colorPrimary: "blue" },
         },
+        signUp: {
+          variables: { colorPrimary: "blue" },
+        },
       }}
     >
       <Component {...pageProps} />
