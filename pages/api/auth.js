@@ -1,6 +1,6 @@
 import { getAuth } from "@clerk/nextjs/server";
 
 export default function handler(req, res) {
-  const { userId } = getAuth(req);
-  res.status(200).json({ userId });
+  const data = getAuth(req);
+  res.status(200).json({ data });
 }
