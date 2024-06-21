@@ -15,7 +15,7 @@ function Nav() {
 
   return (
     <nav className="text-right">
-      <div className="flex justify-between">
+      <div className="flex justify-end">
         <h1 className="font-bold uppercase p-4 md:mt-3">
           <a
             href="/"
@@ -50,8 +50,15 @@ function Nav() {
             <Contact_Icon />
           </Link>
         </li>
+
+        <li className="py-1 border-r-2 border-white hover:border-primary hover:text-gray-900">
+          <SignedIn>
+            <Link href="/create" className="px-4 flex justify-end">
+              <span className="mr-2">Füge ein neues Rezept hinzu </span>
+            </Link>
+          </SignedIn>
+        </li>
       </ul>
-      <SignedIn>hallo</SignedIn>
     </nav>
   );
 }
