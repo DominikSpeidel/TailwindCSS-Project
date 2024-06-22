@@ -11,7 +11,7 @@ module.exports = withUt({
       sm: "640px",
       md: "1024px",
       lg: "1024px",
-      xl: "1280px",
+      xl: "1600px",
     },
     extend: {
       colors: {

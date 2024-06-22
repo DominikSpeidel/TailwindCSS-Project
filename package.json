@@ -15,7 +15,8 @@
     "next": "14.2.3",
     "react": "^18",
     "react-dom": "^18",
-    "uploadthing": "^6.12.0"
+    "uploadthing": "^6.12.0",
+    "uuid": "^10.0.0"
   },
   "devDependencies": {
     "@types/node": "20.14.5",
