@@ -41,6 +41,7 @@ export default function Home() {
               <Card image={"./cappuccino.jpg"} />
               <Card image={"./quiche.jpg"} />
               <Card image={"./Fish.jpg"} />
+              <Card image={"./Krithari.jpg"} />
             </>
           )}
         </div>
