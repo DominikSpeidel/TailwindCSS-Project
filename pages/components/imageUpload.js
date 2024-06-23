@@ -26,7 +26,7 @@ function ImageUpload({ imageUrl, setImageUrl }) {
           </div>
         </div>
       </div>
-      {imageUrl.length ? (
+      {imageUrl !== "" ? (
         <div>
           <img
             src={imageUrl}
