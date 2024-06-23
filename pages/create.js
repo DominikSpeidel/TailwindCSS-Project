@@ -83,6 +83,9 @@ export default function Create() {
                   <input
                     type="text"
                     id="Rezeptname"
+                    minLength="1"
+                    maxLength="150"
+                    pattern="^(?!.*\s{2,}).+$"
                     className="min-w-[14rem] lg:min-w-72 mb-5 shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-lg rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
                     required
                   />
@@ -120,6 +123,9 @@ export default function Create() {
                         type="text"
                         id="ingredient"
                         name="name"
+                        minLength="1"
+                        maxLength="150"
+                        pattern="^(?!.*\s{2,}).+$"
                         className="min-w-[14rem] lg:min-w-72  shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-lg rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-1/2 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
                         value={zutat}
                         onChange={(e) => setZutat(e.target.value)}
@@ -198,12 +204,10 @@ export default function Create() {
               </div>
               {imageUrl.length ? (
                 <div>
-                  <Image
+                  <img
                     src={imageUrl}
+                    className="w-full h-72 object-cover transform hover:scale-105 duration-500"
                     alt="your image"
-                    width={400}
-                    height={400}
-                    style={{ objectFit: "contain" }}
                   />
                 </div>
               ) : null}
