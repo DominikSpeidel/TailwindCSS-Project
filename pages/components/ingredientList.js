@@ -1,4 +1,4 @@
-export default function IngredientList({ zutatenListe, onHandleDelete }) {
+export default function IngredientList({ zutatenListe = [], onHandleDelete }) {
   return (
     <div className="pt-3 mb-10">
       <h3 className="block mb-2 text-lg font-medium text-gray-900 dark:text-white">
