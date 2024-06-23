@@ -1,8 +1,11 @@
 import { useState } from "react";
-import Image from "next/image";
 import { UploadButton } from "@uploadthing/react";
 import LogIn from "./components/LogIn";
-import { v4 as uuidv4 } from "uuid"; // Importieren Sie die Funktion zur Generierung von UUIDs
+import { v4 as uuidv4 } from "uuid";
+
+import RecipeName from "./components/recipeName";
+import RecipeDuration from "./components/recipeDuration";
+import IngredientInput from "./components/ingredientInput";
 
 export default function Create() {
   const [imageUrl, setImageUrl] = useState("");
@@ -26,39 +29,6 @@ export default function Create() {
   function handleDelete(id) {
     setZutatenListe(zutatenListe.filter((zutat) => zutat.id !== id));
   }
-
-  // const [ingredients, setIngredients] = useState([
-  //   { id: 1, name: "", amount: "" },
-  // ]);
-
-  // const handleAddIngredient = () => {
-  //   const newIngredient = { id: ingredients.length + 1, name: "", amount: "" };
-  //   setIngredients([...ingredients, newIngredient]);
-  // };
-
-  // const handleChangeIngredient = (id, event) => {
-  //   const { name, value } = event.target;
-  //   const updatedIngredients = ingredients.map((ingredient) =>
-  //     ingredient.id === id ? { ...ingredient, [name]: value } : ingredient
-  //   );
-  //   setIngredients(updatedIngredients);
-  // };
-
-  // const handleRemoveIngredient = (id) => {
-  //   const updatedIngredients = ingredients.filter(
-  //     (ingredient) => ingredient.id !== id
-  //   );
-  //   setIngredients(updatedIngredients);
-  // };
-
-  // const handleSubmit = (event) => {
-  //   event.preventDefault();
-  //   // Hier kannst du die Formular-Daten senden oder verarbeiten
-  //   console.log(ingredients);
-  //   // Beispiel: API-Aufruf, um das Formular zu speichern
-  // };
-
-  // console.log(ingredients.length === 2 ? ingredients : "keine Ingredients");
   console.log(zutat);
   console.log(zutatenListe);
 
@@ -72,75 +42,18 @@ export default function Create() {
         <form className="mt-10">
           <div className="xl:flex">
             <div>
-              <article className="flex gap-8">
-                <div>
-                  <label
-                    htmlFor="Rezeptname"
-                    className="block mb-2 text-lg font-medium text-gray-900 dark:text-white"
-                  >
-                    Name deines Rezeptes
-                  </label>
-                  <input
-                    type="text"
-                    id="Rezeptname"
-                    minLength="1"
-                    maxLength="150"
-                    pattern="^(?!.*\s{2,}).+$"
-                    className="min-w-[14rem] lg:min-w-72 mb-5 shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-lg rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
-                    required
-                  />
-                </div>
-                <section className="mb-5 flex flex-col items-center">
-                  <label
-                    htmlFor="Dauer"
-                    className="block mb-2 text-lg font-medium text-gray-900 dark:text-white"
-                  >
-                    <span>Zubereitungsdauer</span>
-                  </label>
-                  <div className="flex items-center gap-2">
-                    <input
-                      type="number"
-                      id="Dauer"
-                      className=" max-w-[5rem] shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-lg rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
-                      required
-                    />
-                    <span>min</span>
-                  </div>
-                </section>
-              </article>
+              <section className="flex gap-8">
+                <RecipeName />
+                <RecipeDuration />
+              </section>
 
-              <article>
-                <div className="mb-5 pt-3">
-                  <label
-                    htmlFor="ingredient"
-                    className="block mb-2 text-lg font-medium text-gray-900 dark:text-white"
-                  >
-                    Zutat
-                  </label>
-                  <div className="flex items-center gap-10">
-                    <div className="flex space-x-2">
-                      <input
-                        type="text"
-                        id="ingredient"
-                        name="name"
-                        minLength="1"
-                        maxLength="150"
-                        pattern="^(?!.*\s{2,}).+$"
-                        className="min-w-[14rem] lg:min-w-72  shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-lg rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-1/2 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
-                        value={zutat}
-                        onChange={(e) => setZutat(e.target.value)}
-                      />
-                    </div>
-
-                    <span
-                      className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-lg px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-                      onClick={handleAddIngredient}
-                    >
-                      hinzufügen
-                    </span>
-                  </div>
-                </div>
-                <section className="pt-3 mb-10">
+              <section>
+                <IngredientInput
+                  zutat={zutat}
+                  setZutat={setZutat}
+                  onHandleAddIngredient={handleAddIngredient}
+                />
+                <div className="pt-3 mb-10">
                   <h3 className="block mb-2 text-lg font-medium text-gray-900 dark:text-white">
                     Deine Zutatenliste
                   </h3>
@@ -161,8 +74,8 @@ export default function Create() {
                   ) : (
                     <span>Keine Zutaten hinzugefügt</span>
                   )}
-                </section>
-              </article>
+                </div>
+              </section>
               <div className="mb-5">
                 <label
                   htmlFor="Beschreibung"
