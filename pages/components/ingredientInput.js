@@ -4,7 +4,7 @@ export default function IngredientInput({
   onHandleAddIngredient,
 }) {
   return (
-    <div className="mb-5 pt-3">
+    <section className="mb-5 pt-3">
       <label
         htmlFor="ingredient"
         className="block mb-2 text-lg font-medium text-gray-900 dark:text-white"
@@ -33,6 +33,6 @@ export default function IngredientInput({
           hinzufügen
         </span>
       </div>
-    </div>
+    </section>
   );
 }

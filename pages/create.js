@@ -6,6 +6,8 @@ import { v4 as uuidv4 } from "uuid";
 import RecipeName from "./components/recipeName";
 import RecipeDuration from "./components/recipeDuration";
 import IngredientInput from "./components/ingredientInput";
+import IngredientList from "./components/ingredientList";
+import Textarea from "./components/textarea";
 
 export default function Create() {
   const [imageUrl, setImageUrl] = useState("");
@@ -53,42 +55,12 @@ export default function Create() {
                   setZutat={setZutat}
                   onHandleAddIngredient={handleAddIngredient}
                 />
-                <div className="pt-3 mb-10">
-                  <h3 className="block mb-2 text-lg font-medium text-gray-900 dark:text-white">
-                    Deine Zutatenliste
-                  </h3>
-                  {zutatenListe.length > 0 ? (
-                    <ul>
-                      {zutatenListe.map((zutat) => (
-                        <li key={zutat.id}>
-                          <span className="text-lg">{`- ${zutat.name}`}</span>
-                          <button
-                            className="p-1 ml-2 text-sm text-red-600 rounded-full hover:bg-red-300 "
-                            onClick={() => handleDelete(zutat.id)}
-                          >
-                            <span>(löschen)</span>
-                          </button>
-                        </li>
-                      ))}
-                    </ul>
-                  ) : (
-                    <span>Keine Zutaten hinzugefügt</span>
-                  )}
-                </div>
+                <IngredientList
+                  zutatenListe={zutatenListe}
+                  onHandleDelete={handleDelete}
+                />
               </section>
-              <div className="mb-5">
-                <label
-                  htmlFor="Beschreibung"
-                  className="block mb-2 text-lg font-medium text-gray-900 dark:text-white"
-                >
-                  Beschreibung
-                </label>
-                <textarea
-                  id="Beschreibung"
-                  rows="8"
-                  className="min-w-[14rem] lg:min-w-72 shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-lg rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
-                ></textarea>
-              </div>
+              <Textarea />
             </div>
 
             <div className=" xl:px-20 mx-auto mb-10">
