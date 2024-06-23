@@ -10,7 +10,7 @@ export default function IngredientInput({
         htmlFor="ingredient"
         className="block mb-2 text-lg font-medium text-gray-900 dark:text-white"
       >
-        Zutat
+        Zutat (inkl. Menge)
       </label>
       <div className="flex items-center gap-10">
         <div className="flex space-x-2">

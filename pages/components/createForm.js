@@ -59,7 +59,7 @@ export default function CreateForm() {
               onHandleDelete={handleDelete}
             />
           </section>
-          <Textarea onHandleKeyDown={handleKeyDown} />
+          <Textarea />
         </div>
         <ImageUpload imageUrl={imageUrl} setImageUrl={setImageUrl} />
       </div>

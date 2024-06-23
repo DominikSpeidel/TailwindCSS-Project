@@ -5,15 +5,15 @@ export default function IngredientList({ zutatenListe, onHandleDelete }) {
         Deine Zutatenliste
       </h3>
       {zutatenListe.length > 0 ? (
-        <ul>
+        <ul className="xl:grid xl:grid-cols-2 xl:gap-x-1 xl:max-w-[32rem]">
           {zutatenListe.map((zutat) => (
             <li key={zutat.id}>
-              <span className="text-lg">{`- ${zutat.name}`}</span>
+              <span className="text-md">{`- ${zutat.name}`}</span>
               <button
-                className="p-1 ml-2 text-sm text-red-600 rounded-full hover:bg-red-300 "
+                className="p-1 ml-1 text-sm text-red-600 rounded-full hover:bg-red-300 "
                 onClick={() => onHandleDelete(zutat.id)}
               >
-                <span>(löschen)</span>
+                (x)
               </button>
             </li>
           ))}
