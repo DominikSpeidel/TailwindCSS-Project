@@ -1,7 +1,9 @@
 import { useRouter } from "next/router";
 import useSWR from "swr";
+import LogIn from "../components/LogIn";
+import Clock_Icon from "../components/Icons/Clock_Icon";
 
-export default function ActivityCardDetails({ recipes }) {
+export default function DetailsPage() {
   const router = useRouter();
   const { id } = router.query;
 
@@ -15,5 +17,48 @@ export default function ActivityCardDetails({ recipes }) {
     return <h1>Oh, sorry you must have taken a wrong turn!</h1>;
   }
 
-  return <h1>{recipe.name}</h1>;
+  console.log(recipe);
+
+  return (
+    <article className="min-h-screen">
+      <LogIn />
+      <header>
+        <h2 className="text-gray-700 text-4xl md:text-6xl font-semibold">
+          {recipe.name}
+        </h2>
+        <h3 className="text-2xl font-semibold">{`von ${recipe.user}`}</h3>
+      </header>
+
+      <h4 className="font-bold mt-8 pb-2 border-b border-gray-200">
+        kürzlich hinzugefügt
+      </h4>
+      <div className=" relative mt-6 xl:flex ">
+        <img
+          className=" w-full xl:w-3/5 h-64 xl:h-96 object-cover"
+          src={recipe.imageUrl}
+          alt="Hills"
+        />
+        <div
+          className="badge gap-1 flex items-center
+      "
+        >
+          <Clock_Icon />
+          <span>{recipe.duration} min</span>
+        </div>
+
+        <section className="xl:px-16 max-xl:mt-6">
+          <h3 className="text-2xl font-semibold">Zutaten</h3>
+          <ul className="list-disc ml-4">
+            {recipe.ingredients.map((ingredient) => (
+              <li>{ingredient.name}</li>
+            ))}
+          </ul>
+        </section>
+      </div>
+      <section className="mt-6">
+        <h3 className="text-2xl font-semibold">Zubereitung</h3>
+        <p>{recipe.description}</p>
+      </section>
+    </article>
+  );
 }
