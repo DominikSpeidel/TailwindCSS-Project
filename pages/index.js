@@ -2,9 +2,16 @@ import Card from "./components/card";
 import LogIn from "./components/LogIn";
 
 import { useState } from "react";
+import useSWR from "swr";
 
 export default function Home() {
   const [showAllCards, setShowAllCards] = useState(false);
+
+  const { data: recipes, error } = useSWR("/api/recipes");
+
+  if (recipes) {
+    console.log(recipes.name);
+  }
 
   const handleButtonClick = () => {
     if (showAllCards) {
@@ -29,21 +36,23 @@ export default function Home() {
           kürzlich hinzugefügt
         </h4>
         <div className="mt-6 grid lg:grid-cols-3 gap-10">
-          <Card image={"./cappuccino.jpg"} />
-          <Card image={"./quiche.jpg"} />
-          <Card image={"./Fish.jpg"} />
-
-          <Card image={"./cappuccino.jpg"} />
-          <Card image={"./quiche.jpg"} />
-          <Card image={"./Fish.jpg"} />
-          {showAllCards && (
+          {recipes &&
+            recipes.map((recipe) => (
+              <Card
+                user={recipe.user}
+                name={recipe.name}
+                duration={recipe.duration}
+                imageUrl={recipe.imageUrl}
+              />
+            ))}
+          {/* {showAllCards && (
             <>
               <Card image={"./cappuccino.jpg"} />
               <Card image={"./quiche.jpg"} />
               <Card image={"./Fish.jpg"} />
               <Card image={"./Krithari.jpg"} />
             </>
-          )}
+          )} */}
         </div>
 
         <div className="mt-12"></div>

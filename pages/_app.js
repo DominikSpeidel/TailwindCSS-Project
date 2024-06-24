@@ -1,7 +1,10 @@
 import { ClerkProvider } from "@clerk/nextjs";
 import Layout from "./components/Layout";
+import { SWRConfig } from "swr";
 
 import "@/styles/globals.css";
+
+const fetcher = (arr) => fetch(arr).then((res) => res.json());
 
 export default function App({ Component, pageProps }) {
   return (
@@ -19,9 +22,15 @@ export default function App({ Component, pageProps }) {
       }}
       {...pageProps}
     >
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
+      <SWRConfig
+        value={{
+          fetcher,
+        }}
+      >
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
+      </SWRConfig>
     </ClerkProvider>
   );
 }
