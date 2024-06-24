@@ -3,7 +3,7 @@ import LogIn from "./components/LogIn";
 
 import { useState } from "react";
 
-export default function Home() {
+export default function Home({ recipes }) {
   const [showAllCards, setShowAllCards] = useState(false);
 
   const handleButtonClick = () => {
@@ -29,21 +29,24 @@ export default function Home() {
           kürzlich hinzugefügt
         </h4>
         <div className="mt-6 grid lg:grid-cols-3 gap-10">
-          <Card image={"./cappuccino.jpg"} />
-          <Card image={"./quiche.jpg"} />
-          <Card image={"./Fish.jpg"} />
-
-          <Card image={"./cappuccino.jpg"} />
-          <Card image={"./quiche.jpg"} />
-          <Card image={"./Fish.jpg"} />
-          {showAllCards && (
+          {recipes &&
+            recipes.map((recipe) => (
+              <Card
+                id={recipe._id}
+                user={recipe.user}
+                name={recipe.name}
+                duration={recipe.duration}
+                imageUrl={recipe.imageUrl}
+              />
+            ))}
+          {/* {showAllCards && (
             <>
               <Card image={"./cappuccino.jpg"} />
               <Card image={"./quiche.jpg"} />
               <Card image={"./Fish.jpg"} />
               <Card image={"./Krithari.jpg"} />
             </>
-          )}
+          )} */}
         </div>
 
         <div className="mt-12"></div>

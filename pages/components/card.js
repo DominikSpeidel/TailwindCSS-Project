@@ -1,26 +1,27 @@
 import Clock_Icon from "./Icons/Clock_Icon";
+import Link from "next/link";
 
-function Card({ image }) {
+export default function Card({ id, name, duration, imageUrl, user }) {
   return (
-    <div className="card hover:shadow-xl ">
-      <img
-        className="w-full h-64 object-cover transform hover:scale-105 duration-500"
-        src={image}
-        alt="Hills"
-      />
-      <div className="flex flex-col justify-evenly text-center pt-2 h-20">
-        <p>5 Bean Chili Stew</p>
-        <p>Recipe by Mario</p>
-      </div>
-      <div
-        className="badge gap-1 flex items-center
+    <Link href={`/${id}`}>
+      <div className="card hover:shadow-xl ">
+        <img
+          className="w-full h-64 object-cover transform hover:scale-105 duration-500"
+          src={imageUrl}
+          alt="Hills"
+        />
+        <div className="flex flex-col justify-evenly text-center pt-2 h-20">
+          <p>{name}</p>
+          <p>{`Rezept von ${user}`}</p>
+        </div>
+        <div
+          className="badge gap-1 flex items-center
       "
-      >
-        <Clock_Icon />
-        <span>25 min</span>
+        >
+          <Clock_Icon />
+          <span>{duration} min</span>
+        </div>
       </div>
-    </div>
+    </Link>
   );
 }
-
-export default Card;
