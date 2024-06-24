@@ -2,18 +2,24 @@
   {
     "name": "Quiche",
     "duration": 45,
+    "ingredients": [{ "id": "1", "name": "Knoblauch" }],
+    "description": "So lecker",
     "imageUrl": "https://utfs.io/f/32ca26db-27a6-48cf-86ce-358b14829b70-foroed.jpg",
     "user": "Dominik"
   },
   {
     "name": "Cappuccino",
     "duration": 25,
+    "ingredients": [{ "id": "2", "name": "Knobl" }],
+    "description": "So lecker",
     "imageUrl": "https://utfs.io/f/76b891aa-2725-4952-b0ce-48daa5580540-30fmoj.jpg",
     "user": "Dominik"
   },
   {
     "name": "Fish",
     "duration": 35,
+    "ingredients": [{ "id": "3", "name": "Knoblisa" }],
+    "description": "So lecker",
     "imageUrl": "https://utfs.io/f/de9ca373-780e-4dca-8aa9-a39def4dc3f2-1axrs.jpg",
     "user": "Dominik"
   }

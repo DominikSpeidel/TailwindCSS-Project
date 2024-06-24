@@ -27,6 +27,8 @@ export default function CreateForm() {
     const newRecipe = {
       name: data.name,
       duration: data.duration,
+      description: data.description,
+      ingredients: zutatenListe,
       imageUrl: imageUrl,
       user: "Dominik",
     };
@@ -42,8 +44,7 @@ export default function CreateForm() {
     if (response.ok) {
       mutate();
     }
-    // router.push("/")
-    console.log(data);
+    router.push("/");
   }
 
   const generateUUID = () => {

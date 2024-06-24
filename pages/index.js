@@ -9,10 +9,6 @@ export default function Home() {
 
   const { data: recipes, error } = useSWR("/api/recipes");
 
-  if (recipes) {
-    console.log(recipes.name);
-  }
-
   const handleButtonClick = () => {
     if (showAllCards) {
       window.scrollTo({ top: 0, behavior: "smooth" });
