@@ -2,12 +2,9 @@ import Card from "./components/card";
 import LogIn from "./components/LogIn";
 
 import { useState } from "react";
-import useSWR from "swr";
 
-export default function Home() {
+export default function Home({ recipes }) {
   const [showAllCards, setShowAllCards] = useState(false);
-
-  const { data: recipes, error } = useSWR("/api/recipes");
 
   const handleButtonClick = () => {
     if (showAllCards) {
@@ -35,6 +32,7 @@ export default function Home() {
           {recipes &&
             recipes.map((recipe) => (
               <Card
+                id={recipe._id}
                 user={recipe.user}
                 name={recipe.name}
                 duration={recipe.duration}
