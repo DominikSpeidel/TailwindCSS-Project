@@ -7,11 +7,44 @@ import IngredientList from "./ingredientList";
 import Textarea from "./textarea";
 import ImageUpload from "./imageUpload";
 import SumbitButton from "./sumbitButton";
+import useSWR from "swr";
+import { useRouter } from "next/router";
 
 export default function CreateForm() {
   const [imageUrl, setImageUrl] = useState("");
   const [zutat, setZutat] = useState("");
   const [zutatenListe, setZutatenListe] = useState([]);
+  const router = useRouter();
+
+  const { mutate } = useSWR("/api/recipes");
+
+  async function handleSubmit(event) {
+    event.preventDefault();
+    const form = event.target;
+    const formData = new FormData(form);
+    const data = Object.fromEntries(formData);
+
+    const newRecipe = {
+      name: data.name,
+      duration: data.duration,
+      imageUrl: imageUrl,
+      user: "Dominik",
+    };
+
+    const response = await fetch("/api/recipes", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(newRecipe),
+    });
+
+    if (response.ok) {
+      mutate();
+    }
+    // router.push("/")
+    console.log(data);
+  }
 
   const generateUUID = () => {
     return uuidv4();
@@ -40,7 +73,7 @@ export default function CreateForm() {
   console.log(zutatenListe);
 
   return (
-    <form className="mt-10">
+    <form className="mt-10" onSubmit={handleSubmit}>
       <div className="xl:flex">
         <div>
           <section className="flex gap-8">
