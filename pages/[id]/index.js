@@ -57,7 +57,7 @@ export default function DetailsPage() {
       </div>
       <section className="mt-6">
         <h3 className="text-2xl font-semibold">Zubereitung</h3>
-        <p>{recipe.description}</p>
+        <div style={{ whiteSpace: "pre-wrap" }}>{recipe.description}</div>
       </section>
     </article>
   );
