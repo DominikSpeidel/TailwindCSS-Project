@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { v4 as uuidv4 } from "uuid";
 import RecipeName from "./recipeName";
 import RecipeDuration from "./recipeDuration";
@@ -14,9 +14,25 @@ export default function CreateForm() {
   const [imageUrl, setImageUrl] = useState("");
   const [zutat, setZutat] = useState("");
   const [zutatenListe, setZutatenListe] = useState([]);
+  const [user, setUser] = useState("");
   const router = useRouter();
 
   const { mutate } = useSWR("/api/recipes");
+  const { data: userData, error } = useSWR("/api/auth");
+
+  if (error) {
+    return <h1>Entschuldigung, etwas muss schief gelaufen sein!</h1>;
+  }
+
+  useEffect(() => {
+    if (userData && userData.data && userData.data.sessionClaims) {
+      const { sessionClaims } = userData.data;
+      const detectedName = sessionClaims.first_name
+        ? sessionClaims.first_name
+        : sessionClaims.username;
+      setUser(detectedName);
+    }
+  }, [userData]);
 
   async function handleSubmit(event) {
     event.preventDefault();
@@ -37,7 +53,7 @@ export default function CreateForm() {
       description: data.description,
       ingredients: zutatenListe,
       imageUrl: imageUrl,
-      user: "Dominik",
+      user: user,
     };
 
     const response = await fetch("/api/recipes", {
@@ -76,9 +92,6 @@ export default function CreateForm() {
       e.preventDefault();
     }
   };
-
-  console.log(zutat);
-  console.log(zutatenListe);
 
   return (
     <form className="mt-10" onSubmit={handleSubmit}>
