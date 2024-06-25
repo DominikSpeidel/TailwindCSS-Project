@@ -8,7 +8,7 @@ function Layout({ children }) {
         <Nav />
       </section>
 
-      <main className="px-16 py-6 bg-gray-50 md:col-span-3">{children}</main>
+      <main className="px-10 py-6 bg-gray-50 md:col-span-3">{children}</main>
 
       <Footer />
     </div>
