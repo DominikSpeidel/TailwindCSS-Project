@@ -6,7 +6,7 @@ import IngredientInput from "./ingredientInput";
 import IngredientList from "./ingredientList";
 import Textarea from "./textarea";
 import ImageUpload from "./imageUpload";
-import SumbitButton from "./sumbitButton";
+import SubmitButton from "./submitButton";
 import useSWR from "swr";
 import { useRouter } from "next/router";
 
@@ -117,7 +117,7 @@ export default function CreateForm() {
         </div>
         <ImageUpload imageUrl={imageUrl} setImageUrl={setImageUrl} />
       </div>
-      <SumbitButton />
+      <SubmitButton />
     </form>
   );
 }
