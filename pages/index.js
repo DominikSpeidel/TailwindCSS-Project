@@ -1,5 +1,7 @@
 import Card from "./components/card";
 import LogIn from "./components/LogIn";
+import { SignedIn } from "@clerk/nextjs";
+import Link from "next/link";
 
 import { useState } from "react";
 
@@ -15,8 +17,18 @@ export default function Home({ recipes }) {
 
   return (
     <>
-      <LogIn />
-
+      <div className="max-md:flex justify-between">
+        <LogIn />
+        <div className="mt-2">
+          <SignedIn>
+            <Link href="/create" className="flex justify-end md:hidden">
+              <button>
+                + Rezept<br></br>hinzufügen
+              </button>
+            </Link>
+          </SignedIn>
+        </div>
+      </div>
       <header>
         <h2 className="text-gray-700 text-4xl md:text-6xl font-semibold">
           Rezepte
@@ -24,7 +36,7 @@ export default function Home({ recipes }) {
         <h3 className="text-2xl font-semibold">Für dich & deine Freunde</h3>
       </header>
 
-      <div>
+      <div className>
         <h4 className="font-bold mt-8 pb-2 border-b border-gray-200">
           kürzlich hinzugefügt
         </h4>
