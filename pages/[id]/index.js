@@ -20,7 +20,7 @@ export default function DetailsPage() {
   console.log(recipe);
 
   return (
-    <article className="min-h-screen">
+    <article>
       <LogIn />
       <header>
         <h2 className="text-gray-700 text-4xl md:text-6xl font-semibold">
