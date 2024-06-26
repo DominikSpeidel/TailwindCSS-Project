@@ -13,13 +13,7 @@ function ImageUpload({ imageUrl, setImageUrl }) {
               className="max-xl:absolute bottom-0 left-0 ut-button:bg-blue-700 "
               endpoint="imageUploader"
               content={{
-                button({ ready }) {
-                  if (ready) return <div>Bild auswählen</div>;
-
-                  return "Getting ready...";
-                },
                 allowedContent({ ready, isUploading }) {
-                  if (!ready) return "Checking what you allow";
                   if (isUploading) return "Dein Bild wird gerade hochgeladen..";
                 },
               }}

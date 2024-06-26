@@ -2,17 +2,23 @@ import { ClerkProvider } from "@clerk/nextjs";
 import Layout from "./components/Layout";
 import { SWRConfig } from "swr";
 import useSWR from "swr";
+import { useState, useEffect } from "react";
 
 import "@/styles/globals.css";
 
 const fetcher = (arr) => fetch(arr).then((res) => res.json());
 
 export default function App({ Component, pageProps }) {
+  const [reversedRecipes, setReversedRecipes] = useState([]);
+
   const { data: recipes, error } = useSWR("/api/recipes", fetcher);
 
-  if (error) {
-    return <h1>Entschuldigung, etwas muss schief gelaufen sein!</h1>;
-  }
+  useEffect(() => {
+    if (recipes) {
+      const reversed = [...recipes].reverse();
+      setReversedRecipes(reversed);
+    }
+  }, [recipes]); // Überwache recipes als Abhängigkeit
 
   return (
     <ClerkProvider
@@ -35,7 +41,7 @@ export default function App({ Component, pageProps }) {
         }}
       >
         <Layout>
-          <Component {...pageProps} recipes={recipes} />
+          <Component {...pageProps} recipes={reversedRecipes} />
         </Layout>
       </SWRConfig>
     </ClerkProvider>
