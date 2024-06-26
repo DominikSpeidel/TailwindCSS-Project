@@ -1,5 +1,5 @@
 import { useRouter } from "next/router";
-import useSWR from "swr";
+import useSWR, { mutate } from "swr";
 import LogIn from "../components/LogIn";
 import Clock_Icon from "../components/Icons/Clock_Icon";
 
@@ -8,6 +8,16 @@ export default function DetailsPage() {
   const { id } = router.query;
 
   const { data: recipe, error } = useSWR(`/api/recipes/${id}`);
+
+  async function handleDelete() {
+    const response = await fetch(`/api/recipes/${id}`, {
+      method: "DELETE",
+    });
+    if (response.ok) {
+      mutate(`/api/recipes`);
+      router.push("/");
+    }
+  }
 
   if (!recipe) {
     return null;
@@ -59,6 +69,10 @@ export default function DetailsPage() {
         <h3 className="text-2xl font-semibold">Zubereitung</h3>
         <div style={{ whiteSpace: "pre-wrap" }}>{recipe.description}</div>
       </section>
+
+      <button onClick={handleDelete}>delete</button>
+      <br></br>
+      <button>update</button>
     </article>
   );
 }
