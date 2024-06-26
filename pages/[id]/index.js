@@ -1,13 +1,24 @@
 import { useRouter } from "next/router";
-import useSWR from "swr";
+import useSWR, { mutate } from "swr";
 import LogIn from "../components/LogIn";
 import Clock_Icon from "../components/Icons/Clock_Icon";
+import Link from "next/link";
 
 export default function DetailsPage() {
   const router = useRouter();
   const { id } = router.query;
 
   const { data: recipe, error } = useSWR(`/api/recipes/${id}`);
+
+  async function handleDelete() {
+    const response = await fetch(`/api/recipes/${id}`, {
+      method: "DELETE",
+    });
+    if (response.ok) {
+      mutate(`/api/recipes`);
+      router.push("/");
+    }
+  }
 
   if (!recipe) {
     return null;
@@ -55,9 +66,24 @@ export default function DetailsPage() {
           </ul>
         </section>
       </div>
-      <section className="mt-6">
-        <h3 className="text-2xl font-semibold">Zubereitung</h3>
-        <div style={{ whiteSpace: "pre-wrap" }}>{recipe.description}</div>
+      <section className="mt-6 xl:flex">
+        <article className="xl:w-3/5">
+          <h3 className="text-2xl font-semibold">Zubereitung</h3>
+          <div style={{ whiteSpace: "pre-wrap" }}>{recipe.description}</div>
+        </article>
+        <aside className="flex items-start gap-5 ml-20">
+          <Link href={`/${id}/edit`}>
+            <button className="bg-blue-600 text-white px-4 py-2 rounded-lg font-bold transition-transform duration-300 hover:bg-blue-700 hover:scale-105">
+              Rezept bearbeiten
+            </button>
+          </Link>
+          <button
+            onClick={handleDelete}
+            className="bg-red-600 text-white px-4 py-2 rounded-lg font-bold transition-transform duration-300 hover:bg-red-700 hover:scale-105"
+          >
+            Rezept löschen
+          </button>
+        </aside>
       </section>
     </article>
   );

@@ -1,4 +1,7 @@
-export default function RecipeDuration({ onHandleKeyDown }) {
+export default function RecipeDuration({
+  onHandleKeyDown,
+  currentRecipeDuration,
+}) {
   return (
     <section className="mb-5 flex flex-col items-center">
       <label
@@ -12,6 +15,7 @@ export default function RecipeDuration({ onHandleKeyDown }) {
           type="number"
           id="Dauer"
           name="duration"
+          defaultValue={currentRecipeDuration}
           className=" max-w-[5rem] shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-lg rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
           required
           onKeyDown={onHandleKeyDown}

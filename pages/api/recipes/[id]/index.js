@@ -16,4 +16,16 @@ export default async function handler(request, response) {
     }
     response.status(200).json(recipe);
   }
+
+  if (request.method === "PUT") {
+    const updatedRecipe = request.body;
+    await Recipe.findByIdAndUpdate(id, updatedRecipe);
+    response.status(200).json({ status: "Recipe updated!" });
+    return;
+  }
+
+  if (request.method === "DELETE") {
+    await Recipe.findByIdAndDelete(id);
+    response.status(200).json({ status: "Recipe deleted!" });
+  }
 }
