@@ -1,4 +1,4 @@
-export default function Textarea() {
+export default function Textarea({ currentRecipeDescription }) {
   return (
     <div className="mb-5">
       <label
@@ -11,6 +11,7 @@ export default function Textarea() {
         id="Beschreibung"
         name="description"
         rows="9"
+        defaultValue={currentRecipeDescription}
         className="min-w-[14rem] shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-lg rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
       ></textarea>
     </div>

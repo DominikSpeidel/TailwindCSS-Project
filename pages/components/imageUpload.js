@@ -1,6 +1,6 @@
 import { UploadButton } from "@uploadthing/react";
 
-function ImageUpload({ imageUrl, setImageUrl }) {
+export default function ImageUpload({ imageUrl, setImageUrl }) {
   return (
     <section className=" max-xl:pt-5 xl:px-20 mx-auto mb-10">
       <div className="flex flex-col xl:items-center">
@@ -43,5 +43,3 @@ function ImageUpload({ imageUrl, setImageUrl }) {
     </section>
   );
 }
-
-export default ImageUpload;
