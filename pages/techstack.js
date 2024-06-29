@@ -32,9 +32,11 @@ export default function TechStack() {
         vollständige Funktionalität, um als Rezeptapp im Freundes- und
         Familienkreis herangezogen zu werden. Als Teil meines Projektportfolios
         werde ich Tischlein Deck Dich in den nächsten Wochen und Monaten
-        weiterentwickeln und neue Features aus Lernzwecken implementieren. Eine
-        Übersicht über den verwendeten Tech Stack wird nachfolgend abgebildet.
+        weiterentwickeln und neue Features aus Lernzwecken implementieren.
       </div>
+      <p className="mt-3">
+        Hier ist eine Übersicht über meinen verwendeten TechStack:
+      </p>
 
       <ul className="grid xl:grid-cols-3 grid-cols-2 max-sm:grid-cols-1 gap-y-16 items-center mt-10">
         <li className="flex flex-col items-center">
