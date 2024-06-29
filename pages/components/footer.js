@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-function Footer() {
+export default function Footer() {
   return (
     <footer className="md:col-span-3 md:col-start-2 mt-14 mb-20">
       <ul className="flex text-center justify-evenly ">
@@ -20,5 +20,3 @@ function Footer() {
     </footer>
   );
 }
-
-export default Footer;

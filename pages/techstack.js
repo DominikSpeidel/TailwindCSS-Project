@@ -38,7 +38,7 @@ export default function TechStack() {
         Hier ist eine Übersicht über meinen verwendeten TechStack:
       </p>
 
-      <ul className="grid xl:grid-cols-3 grid-cols-2 max-sm:grid-cols-1 gap-y-16 items-center mt-10">
+      <ul className="grid xl:grid-cols-3 grid-cols-2 max-sm:grid-cols-1 md:gap-y-16 gap-y-10 items-center mt-10">
         <li className="flex flex-col items-center">
           <div>
             <a
