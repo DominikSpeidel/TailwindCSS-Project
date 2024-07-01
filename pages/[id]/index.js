@@ -71,7 +71,7 @@ export default function DetailsPage() {
           <h3 className="text-2xl font-semibold">Zubereitung</h3>
           <div style={{ whiteSpace: "pre-wrap" }}>{recipe.description}</div>
         </article>
-        <aside className="flex items-start gap-5 ml-20">
+        <aside className="flex xl:items-start max-xl:justify-center max-xl:mt-10 gap-5 xl:ml-20">
           <Link href={`/${id}/edit`}>
             <button className="bg-blue-600 text-white px-4 py-2 rounded-lg font-bold transition-transform duration-300 hover:bg-blue-700 hover:scale-105">
               Rezept bearbeiten
