@@ -1,7 +1,7 @@
 import LogIn from "./components/LogIn";
 import UnderConstruction from "./components/UnderConstruction";
 
-function Karriere() {
+export default function Impressum() {
   return (
     <>
       <LogIn />
@@ -9,5 +9,3 @@ function Karriere() {
     </>
   );
 }
-
-export default Karriere;

@@ -1,10 +1,12 @@
 import LogIn from "./components/LogIn";
+import UnderConstruction from "./components/UnderConstruction";
 
 function Kontakt() {
   return (
-    <div className="min-h-screen">
+    <>
       <LogIn />
-    </div>
+      <UnderConstruction />
+    </>
   );
 }
 
