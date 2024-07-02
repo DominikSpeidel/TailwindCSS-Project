@@ -72,7 +72,7 @@ export default function DetailsPage() {
           <h3 className="text-2xl font-semibold">Zubereitung</h3>
           <div style={{ whiteSpace: "pre-wrap" }}>{recipe.description}</div>
         </article>
-        <EditandDelete />
+        <EditandDelete id={id} onHandleDelete={handleDelete} />
       </section>
     </article>
   );
