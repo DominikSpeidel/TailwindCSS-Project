@@ -32,7 +32,7 @@ export default function DetailsPage() {
   console.log(recipe);
 
   return (
-    <article>
+    <article className="text-lg">
       <LogIn />
       <header>
         <h2 className="text-gray-700 text-4xl md:text-6xl font-semibold">
@@ -58,7 +58,7 @@ export default function DetailsPage() {
           <span>{recipe.duration} min</span>
         </div>
 
-        <section className="xl:px-16 max-xl:mt-6">
+        <section className="xl:px-16 max-xl:mt-6 ">
           <h3 className="text-2xl font-semibold">Zutaten</h3>
           <ul className="list-disc ml-4">
             {recipe.ingredients.map((ingredient) => (
