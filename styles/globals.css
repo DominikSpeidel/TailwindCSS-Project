@@ -13,11 +13,11 @@
 }
 
 .card {
-  @apply relative bg-white rounded-lg overflow-hidden shadow-md;
+  @apply relative bg-white rounded-lg overflow-hidden text-lg shadow-md pb-2;
 }
 
 .badge {
-  @apply bg-secondary-100 text-secondary-200 text-sm lg:text-lg uppercase rounded-md p-2 absolute top-0 ml-2 mt-2;
+  @apply bg-secondary-100 text-secondary-200 text-sm lg:text-sm uppercase rounded-md p-2 absolute top-0 ml-2 mt-2;
 }
 
 .btn {

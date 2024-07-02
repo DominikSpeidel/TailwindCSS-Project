@@ -6,7 +6,7 @@ import Home_Icon from "./Icons/Home_Icon";
 import Link from "next/link";
 import { SignedIn } from "@clerk/nextjs";
 
-function Nav() {
+export default function Nav() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   function toggleMenu() {
@@ -14,7 +14,7 @@ function Nav() {
   }
 
   return (
-    <nav className="text-right">
+    <nav className="text-right md:text-xl">
       <div className="flex justify-end">
         <h1 className="font-bold uppercase p-4 md:mt-3">
           <a
@@ -64,5 +64,3 @@ function Nav() {
     </nav>
   );
 }
-
-export default Nav;
