@@ -9,7 +9,7 @@ function handleClick() {
 
 export default function EditandDelete({ id, onHandleDelete }) {
   return (
-    <aside className="flex xl:items-start max-xl:justify-center gap-5 xl:ml-20">
+    <aside className="flex xl:items-start max-xl:justify-center max-xl:mt-6 gap-5 xl:ml-20">
       <SignedIn>
         <Link href={`/${id}/edit`}>
           <button className="bg-blue-600 text-white px-4 py-2 rounded-lg font-bold transition-transform duration-300 hover:bg-blue-700 hover:scale-105">

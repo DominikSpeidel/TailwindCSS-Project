@@ -13,7 +13,7 @@
 }
 
 .card {
-  @apply relative bg-white rounded-lg overflow-hidden text-lg shadow-md py-2;
+  @apply relative bg-white rounded-lg overflow-hidden text-lg shadow-md pb-2;
 }
 
 .badge {
