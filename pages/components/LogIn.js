@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { UserButton, SignedIn, SignedOut } from "@clerk/nextjs";
 
-function LogIn() {
+export default function LogIn() {
   const userButtonAppearance = {
     elements: {
       userButtonAvatarBox: "w-14 h-14",
@@ -33,5 +33,3 @@ function LogIn() {
     </section>
   );
 }
-
-export default LogIn;
