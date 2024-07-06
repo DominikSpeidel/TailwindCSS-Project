@@ -1,4 +1,4 @@
-function About_Icon() {
+export default function About_Icon() {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -16,5 +16,3 @@ function About_Icon() {
     </svg>
   );
 }
-
-export default About_Icon;

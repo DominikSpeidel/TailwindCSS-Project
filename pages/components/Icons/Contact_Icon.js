@@ -1,4 +1,4 @@
-function Contact_Icon() {
+export default function Contact_Icon() {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -16,5 +16,3 @@ function Contact_Icon() {
     </svg>
   );
 }
-
-export default Contact_Icon;

@@ -1,4 +1,4 @@
-function Clock_Icon() {
+export default function Clock_Icon() {
   return (
     <svg
       className="w-5 inline-block mr-1"
@@ -17,5 +17,3 @@ function Clock_Icon() {
     </svg>
   );
 }
-
-export default Clock_Icon;

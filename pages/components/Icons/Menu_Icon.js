@@ -1,4 +1,4 @@
-function Menu_Icon() {
+export default function Menu_Icon() {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -16,5 +16,3 @@ function Menu_Icon() {
     </svg>
   );
 }
-
-export default Menu_Icon;

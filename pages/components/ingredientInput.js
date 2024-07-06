@@ -17,7 +17,6 @@ export default function IngredientInput({
           <input
             type="text"
             id="ingredient"
-            // name="ingredient"
             minLength="1"
             maxLength="150"
             pattern="^(?!.*\s{2,}).+$"

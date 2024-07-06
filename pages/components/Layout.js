@@ -1,7 +1,7 @@
 import Nav from "./nav";
 import Footer from "./footer";
 
-function Layout({ children }) {
+export default function Layout({ children }) {
   return (
     <div className="grid md:grid-cols-4 md:mr-44">
       <section className="md:col-span-1 md:flex md:justify-end">
@@ -16,5 +16,3 @@ function Layout({ children }) {
     </div>
   );
 }
-
-export default Layout;
