@@ -1,4 +1,5 @@
 import { UploadButton } from "@uploadthing/react";
+import Image from "next/image";
 
 export default function ImageUpload({ imageUrl, setImageUrl }) {
   return (
@@ -33,10 +34,13 @@ export default function ImageUpload({ imageUrl, setImageUrl }) {
       </div>
       {imageUrl !== "" ? (
         <div className="mt-4">
-          <img
+          <Image
             src={imageUrl}
             className="w-full h-72 object-cover transform hover:scale-105 duration-500"
+            width={800}
+            height={600}
             alt="your image"
+            priority
           />
         </div>
       ) : null}
