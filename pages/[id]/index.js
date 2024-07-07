@@ -2,9 +2,8 @@ import { useRouter } from "next/router";
 import useSWR, { mutate } from "swr";
 import LogIn from "../components/LogIn";
 import Clock_Icon from "../components/Icons/Clock_Icon";
-import Link from "next/link";
 import EditandDelete from "../components/EditandDelete";
-
+import Image from "next/image";
 export default function DetailsPage() {
   const router = useRouter();
   const { id } = router.query;
@@ -45,9 +44,11 @@ export default function DetailsPage() {
         kürzlich hinzugefügt
       </h4>
       <div className=" relative mt-6 xl:flex ">
-        <img
+        <Image
           className=" w-full xl:w-3/5 h-64 xl:h-96 object-cover"
           src={recipe.imageUrl}
+          width={800}
+          height={600}
           alt="Hills"
         />
         <div
