@@ -38,7 +38,7 @@ export default function Nav() {
           <Link
             href="/"
             className={`px-4 flex justify-end ${
-              router.pathname === "/" ? "text-gray-900" : undefined
+              router.pathname === "/" && "text-gray-900"
             }`}
           >
             <span className="mr-2">Home</span>
@@ -49,9 +49,7 @@ export default function Nav() {
           <Link
             href="/ueber-uns"
             className={`px-4 flex justify-end ${
-              router.pathname.startsWith("/ueber-uns")
-                ? "text-gray-900"
-                : undefined
+              router.pathname.startsWith("/ueber-uns") && "text-gray-900"
             }`}
           >
             <span className="mr-2">Über uns</span>
@@ -62,9 +60,7 @@ export default function Nav() {
           <Link
             href="/kontakt"
             className={`px-4 flex justify-end ${
-              router.pathname.startsWith("/kontakt")
-                ? "text-gray-900"
-                : undefined
+              router.pathname.startsWith("/kontakt") && "text-gray-900"
             }`}
           >
             <span className="mr-2">Kontakt</span>
