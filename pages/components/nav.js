@@ -5,13 +5,17 @@ import Menu_Icon from "./Icons/Menu_Icon";
 import Home_Icon from "./Icons/Home_Icon";
 import Link from "next/link";
 import { SignedIn } from "@clerk/nextjs";
+import { useRouter } from "next/router";
 
 export default function Nav() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const router = useRouter();
 
   function toggleMenu() {
     setMenuOpen(!menuOpen);
   }
+
+  console.log(router);
 
   return (
     <nav className="text-right md:text-xl">
@@ -33,7 +37,12 @@ export default function Nav() {
 
       <ul className={`mt-6 ${menuOpen ? "" : "hidden"} md:block`} id="menu">
         <li className="py-1 border-r-2 border-white hover:border-primary hover:text-gray-900">
-          <Link href="/" className="px-4 flex justify-end">
+          <Link
+            href="/"
+            className={`px-4 flex justify-end ${
+              router.pathname.startsWith("/") ? "text-gray-900" : undefined
+            }`}
+          >
             <span className="mr-2">Home</span>
             <Home_Icon />
           </Link>
