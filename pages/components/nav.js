@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import NavLink from "./NavLink";
 import About_Icon from "./Icons/About_Icon";
 import Contact_Icon from "./Icons/Contact_Icon";
 import Menu_Icon from "./Icons/Menu_Icon";
@@ -34,43 +35,24 @@ export default function Nav() {
       </div>
 
       <ul className={`mt-6 ${menuOpen ? "" : "hidden"} md:block`} id="menu">
-        <li className="py-1 border-r-2 border-white hover:border-primary hover:text-gray-900">
-          <Link
-            href="/"
-            className={`px-4 flex justify-end ${
-              router.pathname === "/" ? "text-gray-900" : undefined
-            }`}
-          >
-            <span className="mr-2">Home</span>
-            <Home_Icon />
-          </Link>
-        </li>
-        <li className="py-1 border-r-2 border-white hover:border-primary hover:text-gray-900">
-          <Link
-            href="/ueber-uns"
-            className={`px-4 flex justify-end ${
-              router.pathname.startsWith("/ueber-uns")
-                ? "text-gray-900"
-                : undefined
-            }`}
-          >
-            <span className="mr-2">Über uns</span>
-            <About_Icon />
-          </Link>
-        </li>
-        <li className="py-1 border-r-2 border-white hover:border-primary hover:text-gray-900">
-          <Link
-            href="/kontakt"
-            className={`px-4 flex justify-end ${
-              router.pathname.startsWith("/kontakt")
-                ? "text-gray-900"
-                : undefined
-            }`}
-          >
-            <span className="mr-2">Kontakt</span>
-            <Contact_Icon />
-          </Link>
-        </li>
+        <NavLink
+          href="/"
+          text="Home"
+          Icon={Home_Icon}
+          isActive={router.pathname === "/"}
+        />
+        <NavLink
+          href="/ueber-uns"
+          text="Über uns"
+          Icon={About_Icon}
+          isActive={router.pathname.startsWith("/ueber-uns")}
+        />
+        <NavLink
+          href="/kontakt"
+          text="Kontakt"
+          Icon={Contact_Icon}
+          isActive={router.pathname.startsWith("/kontakt")}
+        />
 
         <li className="py-1 border-r-2 border-white hover:text-gray-900 max-md:hidden">
           <SignedIn>
