@@ -15,8 +15,6 @@ export default function Nav() {
     setMenuOpen(!menuOpen);
   }
 
-  console.log(router);
-
   return (
     <nav className="text-right md:text-xl">
       <div className="flex justify-end">
@@ -40,7 +38,7 @@ export default function Nav() {
           <Link
             href="/"
             className={`px-4 flex justify-end ${
-              router.pathname.startsWith("/") ? "text-gray-900" : undefined
+              router.pathname === "/" ? "text-gray-900" : undefined
             }`}
           >
             <span className="mr-2">Home</span>
@@ -48,13 +46,27 @@ export default function Nav() {
           </Link>
         </li>
         <li className="py-1 border-r-2 border-white hover:border-primary hover:text-gray-900">
-          <Link href="/ueber-uns" className="px-4 flex justify-end">
+          <Link
+            href="/ueber-uns"
+            className={`px-4 flex justify-end ${
+              router.pathname.startsWith("/ueber-uns")
+                ? "text-gray-900"
+                : undefined
+            }`}
+          >
             <span className="mr-2">Über uns</span>
             <About_Icon />
           </Link>
         </li>
         <li className="py-1 border-r-2 border-white hover:border-primary hover:text-gray-900">
-          <Link href="/kontakt" className="px-4 flex justify-end">
+          <Link
+            href="/kontakt"
+            className={`px-4 flex justify-end ${
+              router.pathname.startsWith("/kontakt")
+                ? "text-gray-900"
+                : undefined
+            }`}
+          >
             <span className="mr-2">Kontakt</span>
             <Contact_Icon />
           </Link>
