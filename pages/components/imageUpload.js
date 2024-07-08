@@ -25,7 +25,6 @@ export default function ImageUpload({ imageUrl, setImageUrl }) {
                 alert("Dein Bild ist hochgeladen");
               }}
               onUploadError={(error) => {
-                // Do something with the error.
                 alert(`ERROR! ${error.message}`);
               }}
             />
