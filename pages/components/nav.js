@@ -5,9 +5,11 @@ import Menu_Icon from "./Icons/Menu_Icon";
 import Home_Icon from "./Icons/Home_Icon";
 import Link from "next/link";
 import { SignedIn } from "@clerk/nextjs";
+import { useRouter } from "next/router";
 
 export default function Nav() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const router = useRouter();
 
   function toggleMenu() {
     setMenuOpen(!menuOpen);
@@ -33,19 +35,38 @@ export default function Nav() {
 
       <ul className={`mt-6 ${menuOpen ? "" : "hidden"} md:block`} id="menu">
         <li className="py-1 border-r-2 border-white hover:border-primary hover:text-gray-900">
-          <Link href="/" className="px-4 flex justify-end">
+          <Link
+            href="/"
+            className={`px-4 flex justify-end ${
+              router.pathname === "/" ? "text-gray-900" : undefined
+            }`}
+          >
             <span className="mr-2">Home</span>
             <Home_Icon />
           </Link>
         </li>
         <li className="py-1 border-r-2 border-white hover:border-primary hover:text-gray-900">
-          <Link href="/ueber-uns" className="px-4 flex justify-end">
+          <Link
+            href="/ueber-uns"
+            className={`px-4 flex justify-end ${
+              router.pathname.startsWith("/ueber-uns")
+                ? "text-gray-900"
+                : undefined
+            }`}
+          >
             <span className="mr-2">Über uns</span>
             <About_Icon />
           </Link>
         </li>
         <li className="py-1 border-r-2 border-white hover:border-primary hover:text-gray-900">
-          <Link href="/kontakt" className="px-4 flex justify-end">
+          <Link
+            href="/kontakt"
+            className={`px-4 flex justify-end ${
+              router.pathname.startsWith("/kontakt")
+                ? "text-gray-900"
+                : undefined
+            }`}
+          >
             <span className="mr-2">Kontakt</span>
             <Contact_Icon />
           </Link>
