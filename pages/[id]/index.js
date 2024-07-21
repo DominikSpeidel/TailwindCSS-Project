@@ -25,7 +25,12 @@ export default function DetailsPage() {
   }
 
   if (error) {
-    return <h1>Oh, sorry you must have taken a wrong turn!</h1>;
+    return (
+      <h1>
+        Ein unerwarteter Fehler ist aufgetreten. Bitte aktualisiere die Seite
+        oder versuche es später erneut.
+      </h1>
+    );
   }
 
   console.log(recipe);
