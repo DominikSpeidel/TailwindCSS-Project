@@ -4,6 +4,7 @@ import LogIn from "../components/LogIn";
 import Clock_Icon from "../components/Icons/Clock_Icon";
 import EditandDelete from "../components/EditandDelete";
 import Image from "next/image";
+
 export default function DetailsPage() {
   const router = useRouter();
   const { id } = router.query;
@@ -25,13 +26,16 @@ export default function DetailsPage() {
   }
 
   if (error) {
-    return <h1>Oh, sorry you must have taken a wrong turn!</h1>;
+    return (
+      <h1>
+        Ein unerwarteter Fehler ist aufgetreten. Bitte aktualisiere die Seite
+        oder versuche es später erneut.
+      </h1>
+    );
   }
 
-  console.log(recipe);
-
   return (
-    <article className="md:text-lg">
+    <div className="md:text-lg">
       <LogIn />
       <header>
         <h2 className="text-gray-700 text-4xl md:text-6xl font-semibold">
@@ -75,6 +79,6 @@ export default function DetailsPage() {
         </article>
         <EditandDelete id={id} onHandleDelete={handleDelete} />
       </section>
-    </article>
+    </div>
   );
 }

@@ -3,18 +3,23 @@ import LogIn from "../components/LogIn";
 import { useRouter } from "next/router";
 import useSWR from "swr";
 
-export default function Edit() {
+export default function EditPage() {
   const router = useRouter();
   const { id } = router.query;
 
   const { data: currentRecipe, error } = useSWR(`/api/recipes/${id}`);
 
   if (!currentRecipe) {
-    return <p>ho</p>;
+    return <p>is Loading</p>;
   }
 
   if (error) {
-    return <h1>Oh, sorry you must have taken a wrong turn!</h1>;
+    return (
+      <h1>
+        Ein unerwarteter Fehler ist aufgetreten. Bitte aktualisiere die Seite
+        oder versuche es später erneut.
+      </h1>
+    );
   }
 
   console.log(currentRecipe);
