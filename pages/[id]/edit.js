@@ -3,7 +3,7 @@ import LogIn from "../components/LogIn";
 import { useRouter } from "next/router";
 import useSWR from "swr";
 
-export default function Edit() {
+export default function EditPage() {
   const router = useRouter();
   const { id } = router.query;
 

@@ -70,18 +70,18 @@ export default function CreateForm() {
     router.push("/");
   }
 
-  const generateUUID = () => {
+  function generateUUID() {
     return uuidv4();
-  };
+  }
 
-  const handleAddIngredient = () => {
+  function handleAddIngredient() {
     const neueZutat = {
       id: generateUUID(),
       name: zutat,
     };
     setZutatenListe([...zutatenListe, neueZutat]);
     setZutat("");
-  };
+  }
 
   function handleDelete(id) {
     setZutatenListe(zutatenListe.filter((zutat) => zutat.id !== id));

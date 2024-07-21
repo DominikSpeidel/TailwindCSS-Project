@@ -4,6 +4,7 @@ import LogIn from "../components/LogIn";
 import Clock_Icon from "../components/Icons/Clock_Icon";
 import EditandDelete from "../components/EditandDelete";
 import Image from "next/image";
+
 export default function DetailsPage() {
   const router = useRouter();
   const { id } = router.query;
