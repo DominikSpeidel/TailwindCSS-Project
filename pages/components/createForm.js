@@ -46,6 +46,8 @@ export default function CreateForm() {
     const form = event.target;
     const formData = new FormData(form);
     const data = Object.fromEntries(formData);
+    const createDate = new Date();
+    const formattedCreateDate = createDate.toLocaleDateString("de-DE");
 
     const newRecipe = {
       name: data.name,
@@ -54,6 +56,7 @@ export default function CreateForm() {
       ingredients: zutatenListe,
       imageUrl: imageUrl,
       user: user,
+      date: formattedCreateDate,
     };
 
     const response = await fetch("/api/recipes", {
