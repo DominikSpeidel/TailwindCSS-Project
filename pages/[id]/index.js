@@ -33,10 +33,8 @@ export default function DetailsPage() {
     );
   }
 
-  console.log(recipe);
-
   return (
-    <article className="md:text-lg">
+    <div className="md:text-lg">
       <LogIn />
       <header>
         <h2 className="text-gray-700 text-4xl md:text-6xl font-semibold">
@@ -80,6 +78,6 @@ export default function DetailsPage() {
         </article>
         <EditandDelete id={id} onHandleDelete={handleDelete} />
       </section>
-    </article>
+    </div>
   );
 }
