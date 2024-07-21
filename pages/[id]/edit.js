@@ -10,7 +10,7 @@ export default function Edit() {
   const { data: currentRecipe, error } = useSWR(`/api/recipes/${id}`);
 
   if (!currentRecipe) {
-    return <p>ho</p>;
+    return <p>is Loading</p>;
   }
 
   if (error) {
