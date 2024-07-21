@@ -39,7 +39,7 @@ export default function CreateForm() {
 
     if (imageUrl === "") {
       setImageUrl(
-        "https://utfs.io/f/32ca26db-27a6-48cf-86ce-358b14829b70-foroed.jpg"
+        "https://utfs.io/f/6ab66948-9cec-454b-96db-668b05258a2c-bdj1id.jpg"
       );
       return;
     }

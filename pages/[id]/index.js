@@ -39,13 +39,13 @@ export default function DetailsPage() {
       <LogIn />
       <header>
         <h2 className="text-gray-700 text-4xl md:text-6xl font-semibold">
-          erstellt am {recipe.name}
+          {recipe.name}
         </h2>
         <h3 className="text-2xl font-semibold">{`von ${recipe.user}`}</h3>
       </header>
 
       <h4 className="font-bold mt-8 pb-2 border-b border-gray-200">
-        {recipe.date}
+        erstellt am {recipe.date}
       </h4>
       <div className=" relative mt-6 xl:flex ">
         <Image
