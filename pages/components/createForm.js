@@ -39,13 +39,15 @@ export default function CreateForm() {
 
     if (imageUrl === "") {
       setImageUrl(
-        "https://utfs.io/f/32ca26db-27a6-48cf-86ce-358b14829b70-foroed.jpg"
+        "https://utfs.io/f/6ab66948-9cec-454b-96db-668b05258a2c-bdj1id.jpg"
       );
       return;
     }
     const form = event.target;
     const formData = new FormData(form);
     const data = Object.fromEntries(formData);
+    const createDate = new Date();
+    const formattedCreateDate = createDate.toLocaleDateString("de-DE");
 
     const newRecipe = {
       name: data.name,
@@ -54,6 +56,7 @@ export default function CreateForm() {
       ingredients: zutatenListe,
       imageUrl: imageUrl,
       user: user,
+      date: formattedCreateDate,
     };
 
     const response = await fetch("/api/recipes", {

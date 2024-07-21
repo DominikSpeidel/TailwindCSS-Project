@@ -45,7 +45,7 @@ export default function DetailsPage() {
       </header>
 
       <h4 className="font-bold mt-8 pb-2 border-b border-gray-200">
-        kürzlich hinzugefügt
+        erstellt am {recipe.date}
       </h4>
       <div className=" relative mt-6 xl:flex ">
         <Image
