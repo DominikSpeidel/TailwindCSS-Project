@@ -11,7 +11,7 @@ const fetcher = (arr) => fetch(arr).then((res) => res.json());
 export default function App({ Component, pageProps }) {
   const [reversedRecipes, setReversedRecipes] = useState([]);
 
-  const { data: recipes, error } = useSWR("/api/recipes", fetcher);
+  const { data: recipes, isLoading, error } = useSWR("/api/recipes", fetcher);
 
   useEffect(() => {
     if (recipes) {
@@ -41,7 +41,11 @@ export default function App({ Component, pageProps }) {
         }}
       >
         <Layout>
-          <Component {...pageProps} recipes={reversedRecipes} />
+          <Component
+            {...pageProps}
+            recipes={reversedRecipes}
+            isLoading={isLoading}
+          />
         </Layout>
       </SWRConfig>
     </ClerkProvider>
