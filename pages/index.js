@@ -5,7 +5,7 @@ import Link from "next/link";
 
 import { useState } from "react";
 
-export default function Home({ recipes }) {
+export default function Home({ recipes, isLoading }) {
   const [showAllCards, setShowAllCards] = useState(false);
 
   const handleCardDisplay = () => {
@@ -14,6 +14,10 @@ export default function Home({ recipes }) {
     }
     setShowAllCards(!showAllCards);
   };
+
+  if (isLoading) {
+    return <p>Ladevorgang ...</p>;
+  }
 
   return (
     <>
