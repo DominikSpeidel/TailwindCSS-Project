@@ -12,12 +12,13 @@
     "@clerk/nextjs": "^5.1.5",
     "@clerk/themes": "^2.1.9",
     "@uploadthing/react": "^6.6.0",
+    "@uploadthing/shared": "^6.7.8",
     "mongoose": "^8.4.3",
     "next": "14.2.3",
     "react": "^18",
     "react-dom": "^18",
     "swr": "^2.2.5",
-    "uploadthing": "^6.12.0",
+    "uploadthing": "^6.13.2",
     "uuid": "^10.0.0"
   },
   "devDependencies": {
